@@ -1,10 +1,10 @@
 from pathlib import Path
 from FindNextMissionNumber import findNextMissionNumber
 import sys
+import json
 
 # resolving the project Path that we can then use as reference
 projectPath = Path('project').resolve()
-
 
 def addNewTask(taskName, dataPath, taskID):
     with open(dataPath / 'tasks', 'a') as file:
@@ -38,3 +38,6 @@ def addNewMission(missionName, missionType):
 
     elif (missionType == 'q' or missionType.lower() == 'quest'):
         addNewQuest(missionName, dataPath, missionID)
+
+# take the new task, append to existing json
+# replace the existing json with new json
